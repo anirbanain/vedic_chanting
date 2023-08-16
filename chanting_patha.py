@@ -76,9 +76,25 @@ def danda_path(mantra):
 
 def ratha_patha(mantra):
   size = len(mantra)
-  mantra.append('')
-  mantra.append('')
-  mantra.append('')
+  mantra.append('_')
+  mantra.append('_')
+  mantra.append('_')
+  mantra.append('_')
+  mantra.append('_')
+  print("\033[1m",'ratha-pāṭha',"\033[0m")  
+  for ii in range(size):
+    print(mantra[ii],mantra[ii+1],"~",mantra[ii+4],mantra[ii+5], '~',end='')
+    num = min(size,ii+2)
+    for kk in range(num,0,-1):
+      print(mantra[kk-1],'',end = '')
+    print('~',end='')
+    num2 = min(size,ii+6)
+    for kk in range(num2,4,-1):
+      print(mantra[kk-1],'',end = '')
+    print('~',end='')
+    for jj in range(ii+1):
+      print(mantra[jj],mantra[jj+1],"~",mantra[jj+4],mantra[jj+5], '~',end='')
+    print("")
 
 # Example sentence
 input_sentence = "tyaṃ su meṣaṃ mahayā svarvidaṃ śataṃ yasya subhvaḥ sākamīrate"
